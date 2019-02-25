@@ -1,5 +1,3 @@
-//bugs
-//In get_input if position is already occupied take input from user again
 #include <stdio.h>
 #define MAX(x, y) (((x) > (y)) ? (x) : (y))
 #define MIN(x, y) (((x) < (y)) ? (x) : (y))
