@@ -1,2 +1,2 @@
 # Tic-Tac-Toe
-A command line Tic-Tac-Toe written in C, where the user takes the first turn as 'x'.
+A command line unbeatable Tic-Tac-Toe written in C, where the user gets to start first as 'x' or second as 'o'.
