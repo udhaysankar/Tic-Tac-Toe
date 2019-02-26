@@ -407,22 +407,22 @@ int main()
  {
    while(available_spots(GRID)!=0)
    {
-     if(terminal_state(GRID)==10)
-     {
-       print(GRID);
-       printf("\nYou have won\n\n");
-       return 0;
-     }else if (terminal_state(GRID)==-10) {
-       print(GRID);
-       printf("\nComputer has won\n\n");
-       return 0;
-     }else if (terminal_state(GRID)==0) {
-       print(GRID);
-       printf("\nThe game is a draw\n\n");
-       return 0;
-     }
    print(GRID);
    get_input(GRID,turn);
+   if(terminal_state(GRID)==10)
+   {
+     print(GRID);
+     printf("\nYou have won\n\n");
+     return 0;
+   }else if (terminal_state(GRID)==-10) {
+     print(GRID);
+     printf("\nComputer has won\n\n");
+     return 0;
+   }else if (terminal_state(GRID)==0) {
+     print(GRID);
+     printf("\nThe game is a draw\n\n");
+     return 0;
+   }
    computer_position(GRID,!turn);
    }
  }

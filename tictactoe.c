@@ -25,85 +25,85 @@ int valid(char (*GRID)[7],int TEMP1)
       switch (TEMP1)
       {
         case 1:
-        if (GRID[1][1]=='x'||GRID[1][1]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[1][1]=='x'||GRID[1][1]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 2:
-        if (GRID[1][3]=='x'||GRID[1][3]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[1][3]=='x'||GRID[1][3]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 3:
-        if (GRID[1][5]=='x'||GRID[1][5]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[1][5]=='x'||GRID[1][5]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 4:
-        if (GRID[3][1]=='x'||GRID[3][1]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[3][1]=='x'||GRID[3][1]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 5:
-        if (GRID[3][3]=='x'||GRID[3][3]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[3][3]=='x'||GRID[3][3]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 6:
-        if (GRID[3][5]=='x'||GRID[3][5]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[3][5]=='x'||GRID[3][5]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 7:
-        if (GRID[5][1]=='x'||GRID[5][1]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[5][1]=='x'||GRID[5][1]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 8:
-        if (GRID[5][3]=='x'||GRID[5][3]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[5][3]=='x'||GRID[5][3]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
         case 9:
-        if (GRID[5][5]=='x'||GRID[5][5]=='o')
-        {
-        printf("\nPosition already occupied!!!\n");
-        return 0;
-        }
-        else
-        return 1;
+              if (GRID[5][5]=='x'||GRID[5][5]=='o')
+              {
+                printf("\nPosition already occupied!!!\n");
+                return 0;
+              }
+              else
+                return 1;
         break;
       }
   }
@@ -113,39 +113,80 @@ int valid(char (*GRID)[7],int TEMP1)
   }
 }
 /*function to get input from user*/
-void get_input(char (*GRID)[7])
+void get_input(char (*GRID)[7],int turn)
 {
   int TEMP2;
-  printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'x': ");
+  if(1==turn)
+  {
+    printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'x': ");
+  }
+  else
+  {
+    printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'o': ");
+  }
   scanf("%d",&TEMP2);
   while((valid(GRID,TEMP2))!=1)
   {
     //if position is already occupied
     printf("\nInvalid Input! Enter a valid position\n");
-    printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'x': ");
+    if(1==turn)
+    {
+      printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'x': ");
+    }
+    else
+    {
+      printf("\nConsider the 3*3 grid with 9 positions\n\nIf position is row 2 column 3, Enter 6 as input\n\nEnter your position for 'o': ");
+    }
     scanf("%d",&TEMP2);
   }
-  switch (TEMP2)
+  if(1==turn)
   {
-    case 1:GRID[1][1]='x';
-    break;
-    case 2:GRID[1][3]='x';
-    break;
-    case 3:GRID[1][5]='x';
-    break;
-    case 4:GRID[3][1]='x';
-    break;
-    case 5:GRID[3][3]='x';
-    break;
-    case 6:GRID[3][5]='x';
-    break;
-    case 7:GRID[5][1]='x';
-    break;
-    case 8:GRID[5][3]='x';
-    break;
-    case 9:GRID[5][5]='x';
-    break;
+    switch (TEMP2)
+    {
+      case 1:GRID[1][1]='x';
+      break;
+      case 2:GRID[1][3]='x';
+      break;
+      case 3:GRID[1][5]='x';
+      break;
+      case 4:GRID[3][1]='x';
+      break;
+      case 5:GRID[3][3]='x';
+      break;
+      case 6:GRID[3][5]='x';
+      break;
+      case 7:GRID[5][1]='x';
+      break;
+      case 8:GRID[5][3]='x';
+      break;
+      case 9:GRID[5][5]='x';
+      break;
+    }
+ }
+  else
+  {
+    switch (TEMP2)
+    {
+      case 1:GRID[1][1]='o';
+      break;
+      case 2:GRID[1][3]='o';
+      break;
+      case 3:GRID[1][5]='o';
+      break;
+      case 4:GRID[3][1]='o';
+      break;
+      case 5:GRID[3][3]='o';
+      break;
+      case 6:GRID[3][5]='o';
+      break;
+      case 7:GRID[5][1]='o';
+      break;
+      case 8:GRID[5][3]='o';
+      break;
+      case 9:GRID[5][5]='o';
+      break;
   }
+ }
 }
 //function to find the number of available available_spots
 int available_spots(char (*GRID)[7])
@@ -285,28 +326,56 @@ int minimax(char (*GRID)[7],int turn)
 //the following function returns the best move
 void computer_position(char (*GRID)[7],int turn)
 {
-  int computer_move[3];
-  int sample=1000;
-  computer_move[0]=sample;
-  for(int i=1;i<6;i=i+2)
+  if(0==turn)
   {
-    for(int j=1;j<6;j=j+2)
+    int sample=1000;
+    int computer_move[3];
+    computer_move[0]=sample;
+    for(int i=1;i<6;i=i+2)
     {
-      if((GRID[i][j]==' ')&&(turn==0))
+      for(int j=1;j<6;j=j+2)
       {
-        GRID[i][j]='o';
-        sample=minimax(GRID,!turn);
-        if(sample<computer_move[0])
+        if(GRID[i][j]==' ')
         {
-          computer_move[0]=sample;
-          computer_move[1]=i;
-          computer_move[2]=j;
+          GRID[i][j]='o';
+          sample=minimax(GRID,!turn);
+          if(sample<computer_move[0])
+          {
+            computer_move[0]=sample;
+            computer_move[1]=i;
+            computer_move[2]=j;
+          }
+          GRID[i][j]=' ';
         }
-        GRID[i][j]=' ';
       }
     }
+    GRID[computer_move[1]][computer_move[2]]='o';
   }
-  GRID[computer_move[1]][computer_move[2]]='o';
+  else
+  {
+    int sample=-1000;
+    int computer_move[3];
+    computer_move[0]=sample;
+    for(int i=1;i<6;i=i+2)
+    {
+      for(int j=1;j<6;j=j+2)
+      {
+        if(GRID[i][j]==' ')
+        {
+          GRID[i][j]='x';
+          sample=minimax(GRID,!turn);
+          if(sample>computer_move[0])
+          {
+            computer_move[0]=sample;
+            computer_move[1]=i;
+            computer_move[2]=j;
+          }
+          GRID[i][j]=' ';
+        }
+      }
+    }
+    GRID[computer_move[1]][computer_move[2]]='x';
+  }
 }
 /*main function*/
 int main()
@@ -321,10 +390,25 @@ int main()
       {'|',' ','|',' ','|',' ','|'},
       {'-','-','-','-','-','-','-'}
  };
- int turn=0;
- //when no spots are available or a win condition is obtained
- while(available_spots(GRID)!=0)
+ int turn;
+ //get the turn from the user
+ printf("\nDo you want to go first as 'x', or second as 'o'?\n");
+ printf("\nEnter 1 for 'x' or 0 for 'o':");
+ scanf("%d",&turn);
+ while((turn!=0)&&(turn!=1))
  {
+   printf("\nInvalid value for turn!\n");
+   printf("\nDo you want to go first as 'x', or second as 'o'?\n");
+   printf("\nEnter 1 for 'x' or 0 for 'o':");
+   scanf("%d",&turn);
+ }
+ //when no spots are available or a win condition is obtained
+ if(1==turn)
+ {
+   while(available_spots(GRID)!=0)
+   {
+   print(GRID);
+   get_input(GRID,turn);
    if(terminal_state(GRID)==10)
    {
      print(GRID);
@@ -334,13 +418,35 @@ int main()
      print(GRID);
      printf("\nComputer has won\n\n");
      return 0;
+   }else if (terminal_state(GRID)==0) {
+     print(GRID);
+     printf("\nThe game is a draw\n\n");
+     return 0;
    }
- print(GRID);
- get_input(GRID);
- computer_position(GRID,turn);
+   computer_position(GRID,!turn);
+   }
  }
- //if the game has progressed so far it is a draw
- print(GRID);
- printf("\nThe game is a draw\n\n");
- return 0;
+ else
+ {
+   while(available_spots(GRID)!=0)
+   {
+     computer_position(GRID,!turn);
+     if(terminal_state(GRID)==-10)
+     {
+       print(GRID);
+       printf("\nYou have won\n\n");
+       return 0;
+     }else if (terminal_state(GRID)==10) {
+       print(GRID);
+       printf("\nComputer has won\n\n");
+       return 0;
+     }else if (terminal_state(GRID)==0) {
+       print(GRID);
+       printf("\nThe game is a draw\n\n");
+       return 0;
+     }
+     print(GRID);
+     get_input(GRID,turn);
+   }
+ }
 }
